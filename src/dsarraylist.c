@@ -3,7 +3,7 @@
 //
 
 #include "dsarraylist.h"
-#include "dscompareint.h"
+#include "dscomparepointer.h"
 #include <stdio.h>
 
 int count = 0;
@@ -46,11 +46,11 @@ int main(){
 
     /// find index of value 10, 5
 
-//    printf("%d",arraylist_indexOf(arrayList,, 10));
-//    printf("%d",arraylist_indexOf(arrayList,, 5));
+    printf("index of 10 in arraylist %d\n",arraylist_indexOf(arrayList,pointerEqual, 10));
+    printf("index of 5 in arraylist %d\n",arraylist_indexOf(arrayList,pointerEqual, 5));
 
     /// sort array list
-    arraylist_sort(arrayList, intCompare);
+    arraylist_sort(arrayList, pointerCompare);
 
     printResult(*arrayList);
 
