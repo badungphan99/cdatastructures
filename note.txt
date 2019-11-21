@@ -1,0 +1,14 @@
+arraylist 		: mảng danh sách tự mở rộng
+avltree			: cây nhị phân tự cân bằng
+binaryheap		: ngắn gọn thì là heap, trong c++ là priovity_queue, hàng chờ ưu tiên etc
+bloomfilter		: kiểm tra 1 phần tử trong tập , sử dụng hash và vector bit
+compareETC		: so sánh 2 phần tử cùng kiểu dữ liệu
+hashETC			: mã hoá dữ liệu để không thể truy về giá trị gốc hoặc sử dụng như giá trị gốc
+hashtable		: các cặp key - value lưu trữ liên tiếp (list), dùng trong std::unorder_map
+list			: danh sách, không phân biệt đầu/cuối, 1 vị trí luôn có thể nhảy về trước hoặc sau
+queue			: hàng chờ
+redblacktree		: cây nhị phân cân bằng, dùng trong std::map
+set			: tập, khác ll ở 1 phần tử chỉ xuất hiện 1 lần
+singlylinkedlist 	: linkedlist phiên bản nào đó
+sortedarray		: arraylist tự sắp xếp
+trie			: map
