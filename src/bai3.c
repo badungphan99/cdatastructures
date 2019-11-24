@@ -89,6 +89,8 @@ SListEntry *init_list()
     scanf("%d", &bac);
     SListEntry *list = NULL;
     
+    printf("Nhap da thuc dang : a0*x^0 + a1*x^1 + ... + an*x^n\n");
+
     for (int i = 0; i <= bac; i++)
     {
         float a;
