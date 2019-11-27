@@ -85,11 +85,10 @@ void print_list(SListEntry *list)
 SListEntry *init_list()
 {
     int bac;
+    printf("Nhap da thuc dang : a0*x^0 + a1*x^1 + ... + an*x^n\n");
     printf("Nhap bac cua da thuc : ");
     scanf("%d", &bac);
     SListEntry *list = NULL;
-    
-    printf("Nhap da thuc dang : a0*x^0 + a1*x^1 + ... + an*x^n\n");
 
     for (int i = 0; i <= bac; i++)
     {
@@ -135,7 +134,7 @@ SListEntry *plus_minus_list(SListEntry *listA,
     {
         SListValue val = malloc(sizeof(float));
         *(float *)val = (*(float *)slist_data(entryA)) + dau*(*(float *)slist_data(entryB));
-        listResult = slist_prepend(&listResult, val);
+        slist_append(&listResult, val);
         entryA = slist_next(entryA);
         entryB = slist_next(entryB);
     }
