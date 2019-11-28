@@ -19,7 +19,7 @@ SListEntry *init_list();
 SListEntry *plus_minus_list(SListEntry *listA, SListEntry *listB, int mode);
 
 // cau c
-float calculate_list(SListEntry *list, SListEntry *listVal);
+float calculate_list(SListEntry *list, float x);
 
 
 int main(int argc, char const *argv[])
@@ -47,18 +47,11 @@ int main(int argc, char const *argv[])
 
     // test tinh gia tri list
     SListEntry *listVal = NULL;
-    printf("Nhap gia tri bien\n");
-    for (int i = 0; i < slist_length(list); i++)
-    {
-        float x;
-        printf("Nhap x%d ", i);
-        scanf("%f", &x);
-        SListValue val = malloc(sizeof(float));
-        *(float *)val = x;
-        listVal = slist_prepend(&listVal, val);
-    }
+    printf("Nhap gia tri bien : ");
+    float x;
+    scanf("%f", &x);
 
-    float result = calculate_list(list, listVal);
+    float result = calculate_list(list, x);
     printf("Ket qua : %0.3f", result);
     return 0;
 }
@@ -142,29 +135,28 @@ SListEntry *plus_minus_list(SListEntry *listA,
     return listResult;
 }
 
-float calculate_list(SListEntry *list, SListEntry *listVal)
+float calculate_list(SListEntry *list, float x)
 {
-    if (slist_length(list) != slist_length(listVal))
-    {
-        printf("Du lieu nhap sai!\n");
-        return -1.0;
-    }
+    // if (slist_length(list) != slist_length(listVal))
+    // {
+    //     printf("Du lieu nhap sai!\n");
+    //     return -1.0;
+    // }
 
     float result = 0.0;
 
     SListEntry *entry = list;
-    SListEntry *entryVal = listVal;
     unsigned int length = slist_length(list);
 
-    while (entry != NULL && entryVal != NULL)
+    while (entry != NULL)
     {
         float tmp = 1;
-        float val = *(float *)slist_data(entryVal);
+        float val = x;
         for (int i = 1; i < length; i++)
             tmp = tmp*val;
         result = result + ( *(float *)(slist_data(entry)) ) * tmp;
+        length--;
         entry = slist_next(entry);
-        entryVal = slist_next(entryVal);
     }
     
     return result;
